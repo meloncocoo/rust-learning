@@ -1,0 +1,15 @@
+[workspace]
+members = ["hello_world", "collections"]
+default-members = ["hello_world"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Melon <nimda_wen@hotmail.com>"]
+description = "Learning for RUST"
+edition = "2021"
+
+[workspace.metadata.webcontents]
+root = "path/to/webproject"
+tool = ["npm", "run", "build"]
+# ...
