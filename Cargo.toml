@@ -1,6 +1,6 @@
 [workspace]
-members = ["hello_world", "collections"]
-default-members = ["hello_world"]
+members = ["hello_world", "collections", "generics", "testing", "guess"]
+default-members = ["testing"]
 resolver = "2"
 
 [workspace.package]
