@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "closure"
+version = "0.1.0"
+
+[[package]]
 name = "collections"
 version = "0.1.0"
 
@@ -16,6 +20,10 @@ version = "0.1.0"
 
 [[package]]
 name = "hello_world"
+version = "0.1.0"
+
+[[package]]
+name = "minigrep"
 version = "0.1.0"
 
 [[package]]
