@@ -1,4 +1,4 @@
-use pointer::{cons_list, demo, tree};
+use pointer::{default::demo, list::cons_list, tree};
 
 fn main() {
     demo();
