@@ -8,8 +8,9 @@ members = [
   "minigrep",
   "closure",
   "pointer",
+  "concurrent",
 ]
-default-members = ["closure"]
+default-members = ["concurrent"]
 resolver = "2"
 
 [workspace.package]
