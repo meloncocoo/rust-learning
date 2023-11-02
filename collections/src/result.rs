@@ -3,10 +3,6 @@ use std::{
     io::{self, ErrorKind, Read},
 };
 
-/**
- * https://kaisery.github.io/trpl-zh-cn/ch09-02-recoverable-errors-with-result.html
- */
-
 pub fn go() {
     // panic!("crash and burn")
 

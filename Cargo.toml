@@ -1,5 +1,14 @@
 [workspace]
-members = ["hello_world", "collections", "generics", "testing", "guess", "minigrep", "closure"]
+members = [
+  "hello_world",
+  "collections",
+  "generics",
+  "testing",
+  "guess",
+  "minigrep",
+  "closure",
+  "pointer",
+]
 default-members = ["closure"]
 resolver = "2"
 
@@ -13,3 +22,9 @@ edition = "2021"
 root = "path/to/webproject"
 tool = ["npm", "run", "build"]
 # ...
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3

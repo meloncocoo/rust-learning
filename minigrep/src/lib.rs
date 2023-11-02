@@ -1,3 +1,7 @@
+//! # minigrep
+//!
+//! `minigrep` is a utility program that searches for keys in a specified file.
+
 use std::{env, error::Error, fs};
 
 pub struct Config {
@@ -46,6 +50,18 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+/// Find line in file by query string.
+/// # Exameples
+/// ```
+/// let query = "duct";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Duct tape.";
+/// assert_eq!(vec!["safe, fast, productive."], minigrep::search(query, contents));
+/// ```
+///
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     contents
         .lines()
@@ -63,13 +79,26 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     // results
 }
 
+/// Find line in file by query string and ignore case.
+/// # Exameples
+/// ```
+/// let query = "duct";
+/// let contents = "\
+/// Rust:
+/// safe, fast, productive.
+/// Pick three.
+/// Trust me.";
+/// assert_eq!(vec!["Rust:", "Trust me."], minigrep::search_case_insensitive(query, contents));
+/// ```
+///
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+    let query = query.to_lowercase();
+
     contents
         .lines()
-        .filter(|line| line.to_lowercase().contains(query))
+        .filter(|line| line.to_lowercase().contains(&query))
         .collect()
 
-    // let query = query.to_lowercase();
     // let mut results = Vec::new();
 
     // for line in contents.lines() {
