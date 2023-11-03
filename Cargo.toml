@@ -9,8 +9,9 @@ members = [
   "closure",
   "pointer",
   "concurrent",
+  "oop",
 ]
-default-members = ["concurrent"]
+default-members = ["hello_world"]
 resolver = "2"
 
 [workspace.package]
