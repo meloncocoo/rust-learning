@@ -7,7 +7,8 @@ mod tests {
 
         match x {
             Some(50) => println!("Got 50"),
-            Some(y) => println!("Matched, y = {y}"),
+            // Some(y) => println!("Matched, y = {y}"),
+            Some(n) if n == y => println!("Matched, n = {n}"),
             _ => println!("Default case, x = {:?}", x),
         }
 

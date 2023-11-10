@@ -77,4 +77,38 @@ mod tests {
             }
         }
     }
+
+    #[test]
+    fn test_match_guard() {
+        let num = Some(5);
+
+        match num {
+            Some(x) if x % 2 == 0 => println!("The num {} is even", x),
+            Some(x) => println!("The num {} is odd", x),
+            None => (),
+        }
+    }
+
+    #[test]
+    fn test_match_bind() {
+        enum Message {
+            Hello { id: i32 },
+        }
+
+        let msg = Message::Hello { id: 12 };
+
+        match msg {
+            Message::Hello {
+                id: id_variable @ 3..=7,
+            } => {
+                println!("Found an id in range: {}", id_variable);
+            }
+            Message::Hello { id: 10..=12 } => {
+                println!("Found an id in another range");
+            }
+            Message::Hello { id } => {
+                println!("Found some other id: {}", id);
+            }
+        }
+    }
 }
